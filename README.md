@@ -1,4 +1,6 @@
 # mavenx
+1.Asssuming Java (> v 12 ) and Maven 3 installed locally
+
 From the mavenx directory 
 to build assemble jar, and run test files run 
 
