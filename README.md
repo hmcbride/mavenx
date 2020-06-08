@@ -13,3 +13,6 @@ to build assemble jar, and run test files run
  or 
  
  validate.bat  <path_to_your_csv_file>/myfile.csv
+ 
+ 
+ Tested on Windows 10 ( Developed on Mac ) 
