@@ -2,18 +2,16 @@ package org.example;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
-public class SodukuCSVReader {
+import org.apache.logging.log4j.core.Logger;
+
+public class SodukuRunner {
+
+
 
     private final int width = 9;										// Grid Width (ex. 9 for a 9x9 grid)
     private int[][] grid;												// Grid that will hold the Sudoku values
-    private List<Integer> possibleValues;								// Assigns possible values to each Sudoku cell
-    private static String sudokuinput = "sudokuinput.csv";				// Location of the Sudoku input csv file
-    private static String sudokuoutput = "sudokuoutput.csv"; 			// Location of the Sudoku output csv file
-
 
 
     public int[][] getData(String filepath) {
@@ -21,9 +19,9 @@ public class SodukuCSVReader {
         Scanner scanIn = null;					//Retrieves Input Data
         String InputLine = "";
         int row = 0;
-        possibleValues = new ArrayList<Integer>();
 
         try {
+
             scanIn = new Scanner(new BufferedReader(new FileReader(filepath)));
             while (scanIn.hasNextLine()) {
                 InputLine = scanIn.nextLine();
@@ -36,14 +34,12 @@ public class SodukuCSVReader {
             scanIn.close();
 
         } catch (Exception e) {
-            System.out.println("INVALID Bad Input: " + e);
+            SodukuValidator.getInvalidMessage(" Bad Input: " + e);
             scanIn.close();
             return grid;
         }
 
-        for (int i=1; i<=width; i++) {       // Specifies the possible values for a given cell (ex. in a 3x3 puzzle 1 to 9 are possible values)
-            possibleValues.add(i);
-        }
+
 
         return grid;
 
@@ -61,9 +57,14 @@ public class SodukuCSVReader {
 
     public static void main(String[] argv)
     {
-        SodukuCSVReader csvReader = new SodukuCSVReader();
+        SodukuRunner sodukuRunner = new SodukuRunner();
 
-        int[][] data = csvReader.getData(argv[0]);
+        int[][] data = sodukuRunner.getData(argv[0]);
+        print_board(data);
+
+        SodukuValidator.isBoardValid(data);
+
+
     }
 
 }
