@@ -1,6 +1,0 @@
-2020-06-08 01:21:15 [main] INFO  SodukuValidator:126 - INVALID Bad Column  Repeated Value
-2020-06-08 01:22:41 [main] INFO  SodukuValidator:126 - INVALID Bad Row Value Repeated Value
-2020-06-08 01:22:41 [main] INFO  SodukuValidator:126 - INVALID  Bad Input: java.lang.NumberFormatException: For input string: "Not a csv file"
-2020-06-08 01:22:41 [main] INFO  SodukuValidator:129 - VALID
-2020-06-08 01:22:41 [main] INFO  SodukuValidator:126 - INVALID Bad Row Value Outside Range 0 to 9 
-2020-06-08 01:22:41 [main] INFO  SodukuValidator:126 - INVALID Bad Column Values Outside Range 0 to 9

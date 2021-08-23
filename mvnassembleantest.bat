@@ -1,1 +1,0 @@
-mvn clean compile package assembly:single surefire:test
